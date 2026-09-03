@@ -1,0 +1,15 @@
+{
+  "name": "bootstrap",
+  "type": "bootstrap",
+  "agent": "governance-architect",
+  "prompt": ".github/prompts/bootstrap.prompt.md",
+  "inputs": [],
+  "outputs": [
+    "governance/constitution.md",
+    "governance/technology-profile.yaml",
+    "governance/quality-gates.yaml",
+    "governance/traceability-model.yaml"
+  ],
+  "validations": ["Governance exists", "Governance has version and status", "No application code is generated"],
+  "next": "pre-sales-wave"
+}

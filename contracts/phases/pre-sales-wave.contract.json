@@ -1,0 +1,10 @@
+{
+  "name": "pre-sales-wave",
+  "type": "wave",
+  "agent": "business-analyst",
+  "prompt": ".github/prompts/pre-sales-wave.prompt.md",
+  "inputs": ["docs/01_work_order.md", "governance/constitution.md", "governance/technology-profile.yaml"],
+  "outputs": ["docs/02_requirements.md", "docs/03_initial_architecture.md", "docs/04_high_level_plan.md"],
+  "validations": ["Outputs stay within scope", "Assumptions are explicit", "No code is generated"],
+  "next": "human-approval"
+}

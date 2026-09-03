@@ -1,0 +1,9 @@
+{
+  "name": "convergence-gate",
+  "type": "gate",
+  "agent": "consistency-reviewer",
+  "prompt": ".github/prompts/convergence-gate.prompt.md",
+  "inputs": ["governance/constitution.md", "governance/technology-profile.yaml", "governance/quality-gates.yaml", "docs/02_requirements.md", "docs/05_functional_design.md", "docs/06_detailed_requirements.md", "docs/07_data_model.yaml", "docs/08_backend_architecture.md", "docs/09_api_catalog.yaml", "docs/10_test_strategy.md", "docs/11_technical_design.md", "docs/12_architecture_document.md", "docs/13_tasks.md", "docs/14_traceability_matrix.md", "outputs/backend", "outputs/frontend", "outputs/api", "outputs/db", "outputs/scripts", "outputs/data", "outputs/tests", "outputs/docs"],
+  "outputs": ["docs/16_convergence_report.md"],
+  "allowedDecisions": ["CONVERGED", "CONVERGED_WITH_DEVIATIONS", "NOT_CONVERGED"]
+}

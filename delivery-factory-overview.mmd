@@ -1,0 +1,18 @@
+flowchart TB
+    A[OPEN SPEC DELIVERY FACTORY<br/>Work Order + Waves + Contracts]
+    B[BOOTSTRAP<br/>Constitution<br/>Technology Profile<br/>Quality Gates<br/>Traceability Model]
+    C[PRE-SALES WAVE<br/>Requirements<br/>Initial Architecture<br/>High-Level Plan]
+    D{HUMAN APPROVAL}
+    E[DESIGN WAVE<br/>Functional Design<br/>Detailed Requirements<br/>Data Model<br/>API Catalog<br/>Technical Design<br/>Test Strategy]
+    F[TASK-PLANNING WAVE<br/>Atomic Tasks<br/>Dependencies<br/>Traceability Matrix]
+    G{ANALYSIS GATE<br/>Compliance<br/>Consistency<br/>Readiness}
+    H[BACKEND WAVE<br/>Task-driven implementation<br/>Tests per task]
+    I[PLATFORM-ASSEMBLY WAVE<br/>Frontend → Package → Data → Docs]
+    J{CONVERGENCE GATE<br/>Spec vs Code vs Tests<br/>Drift and deviations}
+    A --> B --> C --> D
+    D -->|APPROVED| E
+    D -->|CHANGES REQUIRED| C
+    E --> F --> G
+    G -->|READY| H
+    G -->|NOT READY| E
+    H --> I --> J

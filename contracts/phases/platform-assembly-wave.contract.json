@@ -1,0 +1,17 @@
+{
+  "name": "platform-assembly-wave",
+  "type": "wave",
+  "prompt": ".github/prompts/platform-assembly-wave.prompt.md",
+  "orchestration": {
+    "mode": "sequential",
+    "steps": [
+      {"agent": "frontend-generator", "taskTypes": ["frontend", "frontend-test"]},
+      {"agent": "platform-packager", "taskTypes": ["packaging", "local-runtime"]},
+      {"agent": "test-data-generator", "taskTypes": ["test-data", "api-test"]},
+      {"agent": "documentation-writer", "taskTypes": ["documentation"]}
+    ]
+  },
+  "inputs": ["governance/constitution.md", "governance/technology-profile.yaml", "docs/05_functional_design.md", "docs/07_data_model.yaml", "docs/09_api_catalog.yaml", "docs/10_test_strategy.md", "docs/13_tasks.md", "docs/14_traceability_matrix.md", "outputs/backend", "outputs/api", "outputs/db"],
+  "outputs": ["outputs/frontend", "outputs/scripts", "outputs/data", "outputs/tests", "outputs/docs"],
+  "next": "convergence-gate"
+}

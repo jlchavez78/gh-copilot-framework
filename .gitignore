@@ -1,0 +1,43 @@
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Secrets
+.env
+.env.*
+*.key
+*.pem
+secrets/
+
+# Logs and temporary files
+*.log
+tmp/
+temp/
+.cache/
+
+# Node
+node_modules/
+dist/
+coverage/
+
+# Java
+target/
+build/
+.gradle/
+*.class
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Generated runtime content
+outputs/**/target/
+outputs/**/build/
+outputs/**/dist/
+outputs/**/coverage/
+outputs/**/node_modules/

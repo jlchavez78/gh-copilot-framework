@@ -1,0 +1,10 @@
+{
+  "name": "design-wave",
+  "type": "wave",
+  "agent": "solution-designer",
+  "prompt": ".github/prompts/design-wave.prompt.md",
+  "inputs": ["governance/constitution.md", "governance/technology-profile.yaml", "docs/02_requirements.md", "docs/03_initial_architecture.md", "docs/04_high_level_plan.md"],
+  "outputs": ["docs/05_functional_design.md", "docs/06_detailed_requirements.md", "docs/07_data_model.yaml", "docs/08_backend_architecture.md", "docs/09_api_catalog.yaml", "docs/10_test_strategy.md", "docs/11_technical_design.md", "docs/12_architecture_document.md"],
+  "validations": ["Requirements are traceable", "Data and APIs are consistent", "Tests cover critical behaviour", "No code is generated"],
+  "next": "task-planning-wave"
+}

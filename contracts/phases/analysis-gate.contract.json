@@ -1,0 +1,11 @@
+{
+  "name": "analysis-gate",
+  "type": "gate",
+  "agent": "consistency-reviewer",
+  "prompt": ".github/prompts/analysis-gate.prompt.md",
+  "inputs": ["governance/constitution.md", "governance/technology-profile.yaml", "governance/quality-gates.yaml", "governance/traceability-model.yaml", "docs/02_requirements.md", "docs/05_functional_design.md", "docs/06_detailed_requirements.md", "docs/07_data_model.yaml", "docs/08_backend_architecture.md", "docs/09_api_catalog.yaml", "docs/10_test_strategy.md", "docs/11_technical_design.md", "docs/12_architecture_document.md", "docs/13_tasks.md", "docs/14_traceability_matrix.md"],
+  "outputs": ["docs/15_implementation_readiness.md"],
+  "allowedDecisions": ["READY", "READY_WITH_WARNINGS", "NOT_READY"],
+  "nextOnReady": "backend-wave",
+  "nextOnNotReady": "design-wave"
+}

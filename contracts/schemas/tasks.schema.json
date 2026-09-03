@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "tasks.schema.json",
+  "title": "Atomic Tasks",
+  "type": "object",
+  "required": ["version", "tasks"],
+  "properties": {
+    "version": {"type": "string"},
+    "tasks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "title", "type", "status", "requirements", "dependencies", "agent", "deliverables", "validation"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^TASK-[A-Z]+-[0-9]{3}$"},
+          "title": {"type": "string"},
+          "type": {"type": "string"},
+          "status": {"enum": ["PENDING", "READY", "IN_PROGRESS", "BLOCKED", "COMPLETED", "FAILED"]},
+          "requirements": {"type": "array", "items": {"type": "string"}},
+          "dependencies": {"type": "array", "items": {"type": "string"}},
+          "agent": {"type": "string"},
+          "inputs": {"type": "array", "items": {"type": "string"}},
+          "allowedPaths": {"type": "array", "items": {"type": "string"}},
+          "deliverables": {"type": "array", "items": {"type": "string"}},
+          "validation": {"type": "array", "items": {"type": "string"}},
+          "evidence": {"type": "array", "items": {"type": "string"}}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

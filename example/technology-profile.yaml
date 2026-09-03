@@ -1,0 +1,43 @@
+profile:
+  id: assda-dependencia-2454
+  version: 1.0.0
+
+backend:
+  language: Java
+  languageVersion: 21
+  framework: Spring Boot
+  frameworkVersion: 3.x
+
+frontend:
+  language: TypeScript
+  framework: React
+  frameworkVersion: 19
+
+data:
+  primaryDatabase:
+    engine: PostgreSQL
+
+api:
+  style: REST
+  specification: OpenAPI 3.1
+
+testing:
+  backend:
+    unitFramework: JUnit
+    integrationFramework: Testcontainers
+
+  frontend:
+    unitFramework: Vitest
+    e2eFramework: Playwright
+
+deployment:
+  containerisation: Docker
+  orchestration: Docker Compose
+
+security:
+  authentication:
+    - Cl@ve
+    - Certificado Digital
+
+accessibility:
+  standard: WCAG 2.1 AA

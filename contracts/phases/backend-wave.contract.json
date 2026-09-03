@@ -1,0 +1,11 @@
+{
+  "name": "backend-wave",
+  "type": "wave",
+  "agent": "backend-generator",
+  "prompt": ".github/prompts/backend-wave.prompt.md",
+  "inputs": ["governance/constitution.md", "governance/technology-profile.yaml", "docs/07_data_model.yaml", "docs/08_backend_architecture.md", "docs/09_api_catalog.yaml", "docs/10_test_strategy.md", "docs/11_technical_design.md", "docs/12_architecture_document.md", "docs/13_tasks.md", "docs/14_traceability_matrix.md", "docs/15_implementation_readiness.md"],
+  "taskSelection": {"types": ["foundation", "backend-domain", "backend-application", "backend-adapter", "backend-test", "database", "api-contract"], "statuses": ["PENDING", "READY", "FAILED"]},
+  "outputs": ["outputs/backend", "outputs/api", "outputs/db"],
+  "validations": ["Readiness allows execution", "Only authorised tasks are implemented", "Tests are generated", "No unapproved technology is introduced"],
+  "next": "platform-assembly-wave"
+}

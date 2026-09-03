@@ -1,0 +1,48 @@
+profile:
+  id: default-profile
+  version: 0.1.0
+  status: DRAFT
+  description: Replace TBD values with the approved project stack.
+
+backend:
+  language: TBD
+  languageVersion: TBD
+  framework: TBD
+  frameworkVersion: TBD
+  buildTool: TBD
+  architectureStyle: TBD
+
+frontend:
+  language: TBD
+  framework: TBD
+  frameworkVersion: TBD
+  buildTool: TBD
+
+data:
+  primaryDatabase:
+    engine: TBD
+    version: TBD
+  migrationTool: TBD
+
+api:
+  style: TBD
+  specification: OpenAPI
+  specificationVersion: TBD
+
+testing:
+  backend:
+    unitFramework: TBD
+    integrationFramework: TBD
+  frontend:
+    unitFramework: TBD
+    e2eFramework: TBD
+
+deployment:
+  containerisation: TBD
+  orchestration: TBD
+  targetPlatform: TBD
+
+observability:
+  logging: TBD
+  metrics: TBD
+  tracing: TBD

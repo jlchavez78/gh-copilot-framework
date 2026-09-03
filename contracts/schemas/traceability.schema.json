@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "traceability.schema.json",
+  "title": "Traceability Matrix",
+  "type": "object",
+  "required": ["version", "relationships"],
+  "properties": {
+    "version": {"type": "string"},
+    "relationships": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["source", "relationship", "target"],
+        "properties": {
+          "source": {"type": "string"},
+          "relationship": {"type": "string"},
+          "target": {"type": "string"},
+          "evidence": {"type": "array", "items": {"type": "string"}}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

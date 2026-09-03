@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "quality-gates.schema.json",
+  "title": "Quality Gates",
+  "type": "object",
+  "required": ["version", "gates"],
+  "properties": {
+    "version": {"type": "string"},
+    "status": {"type": "string"},
+    "gates": {"type": "object", "minProperties": 1},
+    "severity": {"type": "object"}
+  },
+  "additionalProperties": false
+}
