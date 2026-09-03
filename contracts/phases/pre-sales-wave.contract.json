@@ -1,10 +1,79 @@
 {
   "name": "pre-sales-wave",
   "type": "wave",
+
+  "description": "Transform an approved Work Order into Requirements, Initial Architecture and High-Level Plan.",
+
   "agent": "business-analyst",
+
   "prompt": ".github/prompts/pre-sales-wave.prompt.md",
-  "inputs": ["docs/01_work_order.md", "governance/constitution.md", "governance/technology-profile.yaml"],
-  "outputs": ["docs/02_requirements.md", "docs/03_initial_architecture.md", "docs/04_high_level_plan.md"],
-  "validations": ["Outputs stay within scope", "Assumptions are explicit", "No code is generated"],
+
+  "governance": [
+    "governance/constitution.md",
+    "governance/technology-profile.yaml"
+  ],
+
+  "mandatoryInputs": [
+    "docs/01_work_order.md"
+  ],
+
+  "optionalInputs": [
+    "governance/quality-gates.yaml",
+    "governance/traceability-model.yaml"
+  ],
+
+  "allowedOutputs": [
+    "docs/02_requirements.md",
+    "docs/03_initial_architecture.md",
+    "docs/04_high_level_plan.md"
+  ],
+
+  "forbiddenOutputs": [
+    "docs/05_*",
+    "docs/06_*",
+    "docs/07_*",
+    "docs/08_*",
+    "docs/09_*",
+    "docs/10_*",
+    "docs/11_*",
+    "docs/12_*",
+    "docs/13_*",
+    "docs/14_*",
+    "docs/15_*",
+    "docs/16_*",
+    "outputs/**"
+  ],
+
+  "responsibilities": [
+    "Identify business objectives",
+    "Identify functional requirements",
+    "Identify non-functional requirements",
+    "Identify external integrations",
+    "Identify legal constraints",
+    "Identify technical constraints",
+    "Identify assumptions",
+    "Identify risks",
+    "Identify open questions"
+  ],
+
+  "validations": [
+    "All use cases are covered",
+    "Requirements stay within scope",
+    "Assumptions are explicit",
+    "Open decisions are documented",
+    "External dependencies are identified",
+    "No implementation tasks are generated",
+    "No API specification is generated",
+    "No technical design is generated",
+    "No code is generated"
+  ],
+
+  "completionCriteria": [
+    "docs/02_requirements.md exists",
+    "docs/03_initial_architecture.md exists",
+    "docs/04_high_level_plan.md exists",
+    "Coverage validation passed"
+  ],
+
   "next": "human-approval"
 }

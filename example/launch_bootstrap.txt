@@ -1,0 +1,7 @@
+Ejecuta la fase definida en:
+
+contracts/phases/bootstrap.contract.json
+
+Aplica también:
+
+.github/copilot-instructions.md
