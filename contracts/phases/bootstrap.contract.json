@@ -1,15 +1,75 @@
 {
   "name": "bootstrap",
   "type": "bootstrap",
+
+  "description": "Generate the governance baseline required before executing any project wave.",
+
   "agent": "governance-architect",
+
   "prompt": ".github/prompts/bootstrap.prompt.md",
-  "inputs": [],
-  "outputs": [
+
+  "mandatoryInputs": [
+    "docs/01_work_order.md"
+  ],
+
+  "optionalInputs": [
+    ".github/copilot-instructions.md"
+  ],
+
+  "allowedOutputs": [
     "governance/constitution.md",
     "governance/technology-profile.yaml",
     "governance/quality-gates.yaml",
     "governance/traceability-model.yaml"
   ],
-  "validations": ["Governance exists", "Governance has version and status", "No application code is generated"],
+
+  "forbiddenOutputs": [
+    "docs/02_*",
+    "docs/03_*",
+    "docs/04_*",
+    "docs/05_*",
+    "docs/06_*",
+    "docs/07_*",
+    "docs/08_*",
+    "docs/09_*",
+    "docs/10_*",
+    "docs/11_*",
+    "docs/12_*",
+    "docs/13_*",
+    "docs/14_*",
+    "docs/15_*",
+    "docs/16_*",
+    "outputs/**"
+  ],
+
+  "responsibilities": [
+    "Establish project governance",
+    "Define project constitution",
+    "Define approved technology profile",
+    "Define quality gates",
+    "Define traceability model",
+    "Identify applicable regulations",
+    "Establish delivery constraints"
+  ],
+
+  "validations": [
+    "All governance artefacts exist",
+    "Every governance artefact has version and status",
+    "Technology profile is consistent with the Work Order",
+    "Quality gates are defined",
+    "Traceability model is defined",
+    "No requirements generated",
+    "No architecture generated",
+    "No implementation tasks generated",
+    "No code generated"
+  ],
+
+  "completionCriteria": [
+    "constitution.md exists",
+    "technology-profile.yaml exists",
+    "quality-gates.yaml exists",
+    "traceability-model.yaml exists"
+  ],
+
   "next": "pre-sales-wave"
 }
