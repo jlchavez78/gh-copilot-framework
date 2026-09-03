@@ -1,48 +1,64 @@
 profile:
-  id: default-profile
-  version: 0.1.0
+  id: assda-2454-tramitacion
+  version: 1.0.0
   status: DRAFT
-  description: Replace TBD values with the approved project stack.
+  description: Baseline technology profile for the online procedure 2454 web application, established from the work order and public-administration constraints.
 
 backend:
-  language: TBD
-  languageVersion: TBD
-  framework: TBD
-  frameworkVersion: TBD
-  buildTool: TBD
-  architectureStyle: TBD
+  language: Java
+  languageVersion: "21"
+  framework: Spring Boot
+  frameworkVersion: "3.3.x"
+  buildTool: Maven
+  architectureStyle: Modular monolith
 
 frontend:
-  language: TBD
-  framework: TBD
-  frameworkVersion: TBD
-  buildTool: TBD
+  language: TypeScript
+  framework: React
+  frameworkVersion: "19.x"
+  buildTool: Vite
 
 data:
   primaryDatabase:
-    engine: TBD
-    version: TBD
-  migrationTool: TBD
+    engine: PostgreSQL
+    version: "16.x"
+  migrationTool: Flyway
 
 api:
-  style: TBD
+  style: REST
   specification: OpenAPI
-  specificationVersion: TBD
+  specificationVersion: "3.1"
 
 testing:
   backend:
-    unitFramework: TBD
-    integrationFramework: TBD
+    unitFramework: JUnit 5
+    integrationFramework: Testcontainers
   frontend:
-    unitFramework: TBD
-    e2eFramework: TBD
+    unitFramework: Vitest
+    e2eFramework: Playwright
 
 deployment:
-  containerisation: TBD
-  orchestration: TBD
-  targetPlatform: TBD
+  containerisation: Docker
+  orchestration: Docker Compose
+  targetPlatform: "Junta de Andalucía accredited hosting / cloud aligned with ENS-ENI, pending confirmation of the final environment"
 
 observability:
-  logging: TBD
-  metrics: TBD
-  tracing: TBD
+  logging: "Structured application logs with centralized collection"
+  metrics: "Prometheus-compatible metrics and dashboards"
+  tracing: "OpenTelemetry tracing"
+
+security:
+  standards:
+    - ENS
+    - ENI
+    - RGPD
+    - Ley 39/2015
+    - Ley 39/2006
+  authentication:
+    - Cl@ve
+    - Certificado digital
+    - Firma electrónica
+
+accessibility:
+  standard: WCAG 2.1 AA
+  legalReference: "RD 1112/2018 and applicable public-service accessibility requirements"

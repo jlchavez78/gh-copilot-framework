@@ -1,33 +1,27 @@
-version: 0.1.0
+version: 1.0.0
 status: DRAFT
-
-identifiers:
-  requirement: {prefix: REQ, example: REQ-001}
-  nonFunctionalRequirement: {prefix: NFR, example: NFR-001}
-  businessRule: {prefix: BR, example: BR-001}
-  useCase: {prefix: UC, example: UC-001}
-  entity: {prefix: ENT, example: ENT-001}
-  apiOperation: {prefix: API, example: API-001}
-  architectureDecision: {prefix: ADR, example: ADR-001}
-  task: {prefix: TASK, example: TASK-BE-001}
-  test: {prefix: TEST, example: TEST-001}
-
-mandatoryRelationships:
-  - source: task
-    target: requirement
-  - source: test
-    target: task
-
-optionalRelationships:
-  - source: requirement
-    target: useCase
-  - source: requirement
-    target: businessRule
-  - source: requirement
-    target: apiOperation
-  - source: requirement
-    target: entity
-  - source: task
-    target: apiOperation
-  - source: task
-    target: architectureDecision
+relationships:
+  - source: "WORK-ORDER-2454"
+    relationship: "grounds"
+    target: "GOV-CONSTITUTION"
+    evidence: ["docs/01_work_order.md"]
+  - source: "REQ-001"
+    relationship: "derivesFrom"
+    target: "WORK-ORDER-2454"
+    evidence: ["docs/01_work_order.md"]
+  - source: "UC-001"
+    relationship: "implements"
+    target: "REQ-001"
+    evidence: ["docs/01_work_order.md"]
+  - source: "API-001"
+    relationship: "supports"
+    target: "REQ-001"
+    evidence: ["docs/01_work_order.md"]
+  - source: "TASK-BE-001"
+    relationship: "tracesTo"
+    target: "REQ-001"
+    evidence: ["governance/constitution.md", "governance/quality-gates.yaml"]
+  - source: "TEST-001"
+    relationship: "validates"
+    target: "TASK-BE-001"
+    evidence: ["governance/quality-gates.yaml"]

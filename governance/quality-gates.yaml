@@ -1,4 +1,4 @@
-version: 0.1.0
+version: 1.0.0
 status: DRAFT
 
 gates:
@@ -7,23 +7,36 @@ gates:
     type: manual
     requiredBefore: [design-wave]
     allowedDecisions: [APPROVED, CHANGES_REQUIRED]
+    description: "Formal approval required before the design phase begins."
 
   analysis-gate:
     enabled: true
     type: automated-with-human-review
-    requiredBefore: [backend-wave]
+    requiredBefore: [implementation-wave]
     allowedDecisions: [READY, READY_WITH_WARNINGS, NOT_READY]
+    description: "Review of requirements, legal context, data handling, and execution readiness before implementation."
+
+  privacy-accessibility-gate:
+    enabled: true
+    type: human-review
+    requiredBefore: [design-wave, implementation-wave]
+    allowedDecisions: [PASS, PASS_WITH_REMEDIATION, BLOCK]
+    description: "Mandatory review of privacy protection, special-category data handling, and accessibility conformance."
 
   convergence-gate:
     enabled: true
     type: automated-with-human-review
     requiredAfter: [platform-assembly-wave]
     allowedDecisions: [CONVERGED, CONVERGED_WITH_DEVIATIONS, NOT_CONVERGED]
+    description: "Final verification after platform assembly to confirm readiness to proceed to release or client review."
 
 severity:
   blocking:
     allowsProgress: false
+    description: "Must be resolved before continuing."
   warning:
     allowsProgress: true
+    description: "Progress allowed only with a documented mitigation and named owner."
   informational:
     allowsProgress: true
+    description: "Tracked for awareness but does not block progression."
